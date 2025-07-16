@@ -1,16 +1,17 @@
 <template>
-    <div :class="[
-        'min-h-screen font-sans transition-colors duration-300',
-        darkMode ? 'dark bg-gradient-to-br from-gray-900 via-slate-800 to-gray-950 text-gray-100' :
-                   'bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-500 text-gray-100'
-    ]">
+    <div
+        :class="[
+            'min-h-screen font-sans transition-colors duration-300',
+            darkMode ? 'dark text-gray-100' : 'text-gray-800'
+        ]"
+    >
         <!-- NAVBAR -->
         <header
             :class="[
                 'sticky top-0 z-50 backdrop-blur border-b shadow-sm transition-colors duration-300',
                 isScrolled
                     ? (darkMode ? 'bg-gray-900 border-gray-700 shadow-md' : 'bg-indigo-500 border-indigo-500 shadow-md')
-                    : (darkMode ? 'bg-gray-800/80 border-gray-700' : 'bg-indigo-200/80 border-indigo-300')
+                    : (darkMode ? 'bg-gray-800/80 border-gray-700' : 'bg-indigo-500/80 border-indigo-300')
             ]"
         >
             <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -36,7 +37,7 @@
 
         <!-- MAIN CONTENT -->
         <main
-            class="mt-4 w-full px-6 md:px-12 pt-16 pb-32 lg:w-3/4 xl:w-2/3 mx-auto bg-white/90 dark:bg-gray-800/90 backdrop-blur-md rounded-xl shadow-lg text-gray-800 dark:text-gray-100 custom-scroll"
+            class="mt-4 w-full px-6 md:px-12 pt-16 pb-32 lg:w-3/4 xl:w-2/3 mx-auto rounded-xl shadow-lg custom-scroll"
         >
             <RouterView />
         </main>
@@ -45,12 +46,29 @@
         <footer class="text-center text-sm text-slate-100 dark:text-slate-400 border-t border-white/30 py-4 mt-12">
             &copy; {{ currentYear }} Nam. All rights reserved.
         </footer>
+
+        <!-- BELOW-ALL BACKGROUND LAYER -->
+        <!-- <div class="fixed inset-0 w-screen h-screen -z-10 bg-indigo-200 dark:bg-gray-900"></div> -->
+        <div 
+            class="fixed flex items-center justify-end pr-4 top-0 left-0 w-screen h-screen -z-10 bg-indigo-200 transition-transform duration-700" 
+            :class="darkMode ? '-translate-x-[100vw]' : 'translate-x-0'" 
+        >
+            <SunIcon class="w-40 h-40" />
+        </div>
+        <div 
+            class="fixed flex items-center justify-start pl-4 top-0 left-[100vw] w-screen h-screen -z-10 bg-gray-700 transition-transform duration-700" 
+            :class="darkMode ? '-translate-x-[100vw]' : 'translate-x-0'" 
+        >
+            <MoonIcon class="w-40 h-40" />
+        </div>
     </div>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
+import SunIcon from '@/components/SunIcon.vue'
+import MoonIcon from '@/components/MoonIcon.vue'
 
 const currentYear = new Date().getFullYear()
 const isScrolled = ref(false)
