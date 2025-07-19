@@ -13,6 +13,15 @@
 
         <div class="space-y-2 text-justify">
             <h2 class="text-2xl font-semibold text-indigo-600 dark:text-indigo-400">
+                {{ titleQuestion }}
+            </h2>
+            <p>
+                {{ contentQuestion }}
+            </p>
+        </div>
+
+        <div class="space-y-2 text-justify">
+            <h2 class="text-2xl font-semibold text-indigo-600 dark:text-indigo-400">
                 {{ titleOrigin }}
             </h2>
             <p>
@@ -62,6 +71,11 @@ const titleAbout = '👨‍💻 About Me'
 const subtitleAbout = `
     I’m Nam, a fullstack web engineer who is fond of reusable and high-performance codes.
     From backend flexibility and efficency to frontend reactivity, I build with intention and deliver with heart.
+`
+
+const titleQuestion = '🤔 Why blackkat98'
+const contentQuestion = `
+    It’s simple: I'm a guy born in 1998 who happens to love the color black and cats.
 `
 
 const titleOrigin = '🧭 Where I Come From'

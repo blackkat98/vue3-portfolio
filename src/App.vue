@@ -15,12 +15,12 @@
             ]"
         >
             <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-                <h1 class="text-xl md:text-2xl font-bold text-white">Nam.dev</h1>
+                <h1 class="text-xl md:text-2xl font-bold text-white">Nam.dev-blackkat98</h1>
                 <div class="flex items-center gap-4">
                     <nav class="hidden md:flex gap-6 text-sm font-medium">
                         <RouterLink to="/" class="nav-link">Home</RouterLink>
-                        <RouterLink to="/insight" class="nav-link">Insight</RouterLink>
                         <RouterLink to="/about" class="nav-link">About</RouterLink>
+                        <RouterLink to="/insight" class="nav-link">Insight</RouterLink>
                         <RouterLink to="/experience" class="nav-link">Experience</RouterLink>
                         <RouterLink to="/demo" class="nav-link">Demo</RouterLink>
                     </nav>
