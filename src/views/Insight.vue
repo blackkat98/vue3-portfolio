@@ -1,6 +1,5 @@
 <template>
     <section class="space-y-4 py-2 px-4 font-mono text-gray-800 dark:text-gray-100">
-        <!-- Heading -->
         <div class="text-center space-y-2">
             <p class="text-sm text-gray-500 dark:text-gray-400 select-none">&lt;insight&gt;</p>
             <h1 class="text-4xl font-bold text-indigo-700 dark:text-indigo-300">
@@ -27,7 +26,6 @@
             </blockquote>
         </article>
 
-        <!-- Footer Tag -->
         <p class="text-center text-xs text-gray-400 dark:text-gray-600 select-none">&lt;/eof&gt;</p>
     </section>
 </template>

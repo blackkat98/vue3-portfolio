@@ -1,6 +1,5 @@
 <template>
     <section class="space-y-4 py-2 px-4 font-mono text-gray-800 dark:text-gray-100 max-w-4xl mx-auto">
-        <!-- Intro -->
         <div class="space-y-2 text-center">
             <p class="text-sm text-gray-500 dark:text-gray-400 select-none">&lt;about&gt;</p>
             <h1 class="text-4xl font-bold text-indigo-700 dark:text-indigo-300">
@@ -12,7 +11,6 @@
             <p class="text-sm text-gray-500 dark:text-gray-400 select-none">&lt;/about&gt;</p>
         </div>
 
-        <!-- Background -->
         <div class="space-y-2 text-justify">
             <h2 class="text-2xl font-semibold text-indigo-600 dark:text-indigo-400">
                 {{ titleOrigin }}
@@ -22,7 +20,6 @@
             </p>
         </div>
 
-        <!-- Philosophy -->
         <div class="space-y-2 text-justify">
             <h2 class="text-2xl font-semibold text-indigo-600 dark:text-indigo-400">
                 {{ titleThough }}
@@ -32,7 +29,6 @@
             </p>
         </div>
 
-        <!-- Stack summary -->
         <div class="space-y-2">
             <h2 class="text-2xl font-semibold text-indigo-600 dark:text-indigo-400">
                 {{ titleStack }}

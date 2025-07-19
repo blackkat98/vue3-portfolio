@@ -1,6 +1,5 @@
 <template>
     <section class="space-y-4 py-2 px-4 font-mono">
-        <!-- Hero -->
         <div class="space-y-2 text-center">
             <p class="text-sm text-gray-500 select-none">&lt;showcase&gt;</p>
             <h1 class="text-4xl font-bold text-indigo-700 dark:text-indigo-300">
@@ -27,11 +26,12 @@
             </h2>
             <ImageToAscii />
         </div>
+
+        <p class="text-center text-xs text-gray-400 dark:text-gray-600 select-none">&lt;/to-be-continue&gt;</p>
     </section>
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import ImageToAscii from '@/components/ImageToAscii.vue'
 
 const title = '🧪 Demo'

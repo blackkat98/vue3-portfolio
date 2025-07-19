@@ -26,7 +26,7 @@
                     </nav>
                     <button
                         aria-label="Toggle dark mode"
-                        @click="darkMode = !darkMode"
+                        @click="modeChange"
                         class="text-white text-sm border border-white/40 px-3 py-1 rounded hover:bg-white/10 transition"
                         title="Toggle Dark Mode"
                     >
@@ -64,9 +64,12 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import ModeBackground from '@/components/ModeBackground.vue'
 
+const modeKey = 'dark-mode'
+const storedMode = localStorage.getItem(modeKey)
+
 const currentYear = new Date().getFullYear()
 const isScrolled = ref(false)
-const darkMode = ref(false)
+const darkMode = ref(storedMode === '1')
 
 const handleScroll = () => {
     isScrolled.value = window.scrollY > 10
@@ -79,6 +82,11 @@ onMounted(() => {
 onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll)
 })
+
+function modeChange() {
+    darkMode.value = !darkMode.value
+    localStorage.setItem(modeKey, darkMode.value ? '1' : '0')
+}
 </script>
 
 <style>

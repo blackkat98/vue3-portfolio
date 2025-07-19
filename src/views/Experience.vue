@@ -20,13 +20,11 @@
                 @mouseenter="hoverItem(item.id)"
                 @mouseleave="leaveItem(item.id)"
             >
-                <!-- Dot + Icon -->
                 <div class="absolute -left-4 top-2 w-8 h-8 rounded-full flex items-center justify-center text-white shadow-lg"
                      :style="{ backgroundColor: item.color }">
                     {{ item.icon }}
                 </div>
 
-                <!-- Card -->
                 <div
                     class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700 shadow-md rounded-lg p-6 transition-all duration-300"
                     :class="{ 'opacity-100 translate-y-0': visibleItems.has(item.id), 'opacity-0 translate-y-8': !visibleItems.has(item.id) }"
