@@ -26,7 +26,7 @@
             <h2 class="text-2xl font-semibold text-indigo-600 dark:text-indigo-200">
                 {{ techTitle }}
             </h2>
-            <div class="bg-gray-900 text-green-400 text-sm p-4 rounded-md overflow-auto whitespace-pre-wrap leading-relaxed max-h-64">
+            <div class="bg-gray-900/70 text-green-400 text-sm p-4 rounded-md overflow-auto whitespace-pre-wrap leading-relaxed max-h-64">
                 {{ techCode }}
             </div>
         </div>
@@ -42,11 +42,11 @@ const ctaText = 'View Projects'
 const techTitle = '🧰 Technologies'
 const techCode = `const technologies = {
     backend: [ 'PHP', 'Laravel', 'NodeJS', 'NestJS', 'ExpressJS' ],
-    frontend: [ 'jQuery', 'Vue 2', 'Vue 3', 'NuxtJS' ],
+    frontend: [ 'jQuery', 'VueJS 2', 'VueJS 3', 'NuxtJS' ],
     database: [ 'MySQL', 'MariaDB', 'PostgreSQL' ],
     cache: [ 'Redis' ],
     dev_tools: [ 'Composer', 'NPM', 'Vite', 'Webpack', 'ElasticSearch', 'Airflow' ],
     mgmt_tools: [ 'Git', 'Docker', 'Jenkins', 'Jira' ],
-    others: [ 'and more ...' ],
+    and_more: [ '...' ],
 }`
 </script>

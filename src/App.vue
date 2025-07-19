@@ -25,6 +25,7 @@
                         <RouterLink to="/demo" class="nav-link">Demo</RouterLink>
                     </nav>
                     <button
+                        aria-label="Toggle dark mode"
                         @click="darkMode = !darkMode"
                         class="text-white text-sm border border-white/40 px-3 py-1 rounded hover:bg-white/10 transition"
                         title="Toggle Dark Mode"
@@ -45,30 +46,23 @@
         <!-- FOOTER -->
         <footer class="text-center text-sm text-slate-100 dark:text-slate-400 border-t border-white/30 py-4 mt-12">
             &copy; {{ currentYear }} Nam. All rights reserved.
+            <div class="text-xs text-slate-500 dark:text-slate-500">
+                Powered by <a href="https://vuejs.org/" target="_blank" class="underline hover:text-indigo-400">Vue.js</a>
+                &#44;
+                <a href="https://tailwindcss.com/" target="_blank" class="underline hover:text-indigo-400">Tailwind CSS</a>
+                &amp;
+                <a href="https://vitejs.dev/" target="_blank" rel="noopener" class="underline hover:text-indigo-400">Vite</a>.
+            </div>
         </footer>
 
-        <!-- BELOW-ALL BACKGROUND LAYER -->
-        <!-- <div class="fixed inset-0 w-screen h-screen -z-10 bg-indigo-200 dark:bg-gray-900"></div> -->
-        <div 
-            class="fixed flex items-center justify-end pr-4 top-0 left-0 w-screen h-screen -z-10 bg-indigo-200 transition-transform duration-700" 
-            :class="darkMode ? '-translate-x-[100vw]' : 'translate-x-0'" 
-        >
-            <SunIcon class="w-40 h-40" />
-        </div>
-        <div 
-            class="fixed flex items-center justify-start pl-4 top-0 left-[100vw] w-screen h-screen -z-10 bg-gray-700 transition-transform duration-700" 
-            :class="darkMode ? '-translate-x-[100vw]' : 'translate-x-0'" 
-        >
-            <MoonIcon class="w-40 h-40" />
-        </div>
+        <ModeBackground :darkMode="darkMode" />
     </div>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
-import SunIcon from '@/components/SunIcon.vue'
-import MoonIcon from '@/components/MoonIcon.vue'
+import ModeBackground from '@/components/ModeBackground.vue'
 
 const currentYear = new Date().getFullYear()
 const isScrolled = ref(false)
