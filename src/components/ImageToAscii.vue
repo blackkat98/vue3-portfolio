@@ -122,5 +122,6 @@ function imageToAscii(event) {
 function clearImage() {
     previewUrl.value = ''
     asciiArt.value = ''
+    coloredAsciiArt.value = ''
 }
 </script>
